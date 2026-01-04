@@ -1,0 +1,246 @@
+\documentclass{resume} 
+\usepackage[left=0.6in,top=0.6in,right=0.8in,bottom=0.6in]{geometry} 
+\pagenumbering{arabic}
+\usepackage{setspace}
+
+\usepackage{fontawesome}
+\usepackage{enumitem}
+\usepackage{datetime2}
+% \usepackage{xcolor}
+% \renewcommand\thefootnote{\textcolor{black}{\arabic{footnote}}}
+\usepackage[symbol]{footmisc}
+\usepackage{textcomp}
+\newcommand{\smallspace}{\hspace{0.2em}}
+
+\newcommand{\resumeHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    
+}
+% \newcommand*{\subsectionstyles}[1]{{\fontsize{10pt}{1em}\bodyfont\textcolor{text}{#1}}}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeSectionType}[3]{
+  \hspace{-1.3em}\item\begin{tabular*}{0.5\textwidth}[t]{
+    p{0.25\linewidth}p{0.02\linewidth}p{0.67\linewidth}
+  }
+  \normalsize
+    \textbf{#1} & #2 & {#3}
+  \end{tabular*}\vspace{-8pt}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancypagestyle{firstpage}
+{
+    \fancyhead[L]{}    
+    % \fancyfoot[R]{\color{date} Last Updated on \today}
+}
+\fancypagestyle{reference}
+{
+    \fancyfoot[L] {}
+    \fancyfoot[C] {}
+    \fancyfoot[R] {\color{date} \thepage}
+}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyfoot[C] {\color{date} \thepage}
+\fancyfoot[R]{\color{date} Last Updated on \today}
+% 483d8b, 8000000
+\usepackage[dvipsnames]{xcolor}
+\definecolor{hypercolor}{HTML}{800000}
+\definecolor{date}{HTML}{666666} 
+\usepackage{hyperref}
+\usepackage{academicons}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=hypercolor,
+}
+
+% \usepackage{mathpazo} 
+\usepackage{fontspec}
+% \setmainfont[
+% BoldFont = Source Sans Pro-{Semi-bold}]{Source Sans Pro}
+\setmainfont{SourceSansPro-Regular.otf}[
+  Path = fonts/,
+  BoldFont = SourceSansPro-SemiBold.otf,
+  ItalicFont = SourceSansPro-It.otf,
+  BoldItalicFont = SourceSansPro-BoldIt.otf
+]
+
+% \setromanfont[Mapping={tex-text}, 
+% 	Numbers={OldStyle},
+% 	Ligatures={Common}]%{Minion Pro}
+%     {Caladea}
+% \setmainfont[
+% BoldFont = Open Sans {Semi-bold}]{Open Sans}
+% \setsansfont[
+% BoldFont = Roboto-Medium]{Roboto}
+
+% Caladea
+\name{Jesal Deepakbhai Shah}
+\address{\hspace{0.2em} \hspace{0.4em} {\small \faEnvelope} \hspace{0.1em} \href{mailto:jesalshah1510@gmail.com}{jesalshah1510@gmail.com} \hspace{0.4em}
+{\large\faGithub} \href{https://github.com/shahjesal15}{Jesal Shah} \hspace{0.4em} 
+{\large\faHome} \href{https://jesalshah.github.io/}{jesalshah} \hspace{0.4em} 
+{\large\faLinkedin} \href{https://linkedin.com/in/shahjesal15}{\texttt{shahjesal15}}} 
+\begin{document}
+% \setstretch{1.1}
+\fancyheadoffset[RO]{5em}
+\fancyfootoffset[RO]{0cm}
+\thispagestyle{firstpage}
+%----------------------------------------------------------------------------------------
+%	EDUCATION 
+%----------------------------------------------------------------------------------------
+\vspace{-10pt}
+\begin{rSection}{Education}
+%--copy and paste this region  if you need more--
+
+
+{\textbf {B.E. in Electronics and Communication}} \hfill {CGPA: 7.63/10.0} \\
+{\href{https://www.gtu.ac.in/}{Gujarat Technological University}} \hfill {Jun 2024} 
+\begin{itemize}
+    % Thesis
+  \item[] \vspace{-0.5em} \hspace{-1.0em} Thesis: \emph{Impedance-based trajectory tracking for quadrupedal locomotion}
+  % Focus
+  \item[] \vspace{-0.5em} \hspace{-1.0em} Focus: \emph{Robot Dynamics}, \smallspace \emph{Legged Locomotion}, \smallspace \emph{Computed Torque Control}, \smallspace and \smallspace \emph{Robotics Software}.
+\end{itemize}
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%	PROFESSIONAL Experience
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Professional experience}
+% -- Strider Robotics full-time --
+{\bf Associate Robotics Engineer} \hfill {\ Sept 2024 -- Present }\\ 
+{\href{https://www.strider-robotics.in/}{Strider Robotics}} \hfill {\ {Bengaluru, IN}}
+\begin{cvitems}
+  \item Improved sim-to-real transfer of reinforcement learning policies for quadrupedal locomotion through system identification using machine and reinforcement learning, aligning simulator dynamics with real hardware.  
+  \item Designed and implemented push- and fall-recovery behaviors for a quadrupedal robot to recover from slips, external pushes, and full fall scenarios.
+  \item Improved Model Predictive Control (MPC) and implemented a foothold optimization framework, achieving more stable locomotion for a quadrupedal robot on uneven terrain.
+  \item Designed and implemented a Kalman Filter–based state estimator fusing IMU, leg kinematics, and contact data; validated against motion-capture ground truth, resulting in highly accurate and robust state estimation for a quadrupedal robot.
+  \item Maintained and extended the robot software stack and developed an internal SDK, enabling faster experimentation and scalable development for control and navigation workflows.
+\end{cvitems}
+%--Strider Robotics Intern--
+{\bf  Robotics Intern} \hfill {\ Jan 2024 -- Aug 2024 }\\ 
+{\href{https://www.strider-robotics.in/}{Strider Robotics}} \hfill {\ {Bengaluru, IN}}
+\begin{cvitems}
+  \item Developed an impedance-based trajectory tracker for quadrupedal legs within the MPC framework using computed torque control algorithm, enabling force-compliant behavior in leg motion.
+  \item Benchmarked multiple actuator designs, including quasi-direct drive and harmonic drives, evaluating performance for speed, torque, and efficiency of the actuators, resulting in actuator selection for the robot designs.
+  \item Integrated the Unitree SDK for hardware testing, facilitating seamless deployment and evaluation of control algorithms on the GO1 robot.
+\end{cvitems}
+%--Blog writer--
+{\bf  Technical Content Writer} \hfill {\ Jan 2023 -- Present }\\ 
+{\href{https://www.circuitbread.com/tutorials/series/communication-protocols}{CircuitBread}} \hfill {\ ({Remote}) Boise, US}
+\begin{cvitems}
+    \item Published in-depth articles on communication protocols for embedded systems, contributing to an online learning platform used by students and early-career engineers
+    \item Collaborate with the CircuitBread team on ongoing educational content, contributing to documentation and future technical tutorials.
+\end{cvitems}
+\end{rSection}
+
+%--------------------------------------------------------------------------------
+%    Leadership and Activities 
+%-----------------------------------------------------------------------------------------------
+\begin{rSection}{Leadership and Activities}
+%-- Software Lead --
+{\bf Software Lead}  \hfill {\ Aug 2022 -- Nov 2023}\\
+{\href{https://www.gturoboticsclub.com/acheivements}{GTU Robotics Club}} \hfill {\ {Ahmedabad, IN}}
+\begin{cvitems}
+  \item Mentored and coordinated a multi-member software team, steering a strategic transition from ad-hoc hardware integration to a modular robotics software stack, which directly enabled a \textbf{national championship win} at DD Robocon 2023 (1st of 63 teams) and representing \textbf{India} at ABU Robocon 2023 (6th of 13 countries).
+  \item Implemented inverse kinematics and motion planning for a 3WD omnidirectional mobile base, enabling repeatable point-to-point navigation under competition constraints.
+  \item Developed a dead-reckoning state estimation algorithm by fusing wheel encoder and IMU data, achieving localization accuracy within a few centimeters during autonomous operation.
+\end{cvitems}
+%-- Eyantra 2023 --
+{\bf Software Member}  \hfill {\ Aug 2022 -- Apr 2023}\\
+{\href{https://www.gturoboticsclub.com/acheivements}{Team GRC}}{, }{\href{https://www.youtube.com/watch?v=EAOabSZD77o}{e-Yantra 2023}} \hfill {\ {Ahmedabad, IN}}
+\begin{cvitems}
+  \item Developed a 3WD holonomic mobile base simulation in ROS and Gazebo, enabling the robot to follow high-level velocity commands and validating planning algorithms before hardware deployment.
+  \item Implemented low-level control using coordinate transforms and inverse kinematics, converting task-space velocity commands into wheel velocities for hardware deployment.
+  \item Built a vision-based pose estimation pipeline with OpenCV and ArUco markers using a ceiling-mounted camera, enabling localization for the for the robot hardware.
+  \item Integrated perception, localization, and control into a unified robotic system that autonomously drew digital images on a real-world canvas during the final stage of e-Yantra 2023 (HOLA Bot theme).
+\end{cvitems}
+%-- Software Member --
+{\bf Software Member}  \hfill {\ Oct 2021 -- Jul 2022}\\
+{\href{https://www.gturoboticsclub.com/acheivements}{GTU Robotics Club}} \hfill {\ {Ahmedabad, IN}}
+\begin{cvitems}
+  \item Developed software for a semi-autonomous wheeled robot by fusing data from multiple onboard sensors, enabling robust and low-latency teleoperation during competition runs.
+  \item Implemented a real-time perception pipeline using YOLOv5 for object detection and tracking, providing reliable visual feedback for accurate target position to the shooting mechanism.
+  \item Designed and deployed semi-autonomous control logic for the pick-and-place mechanism, reducing operator workload and contributing to a \textbf{top-10 national finish} (10th out of 43 teams) at DD Robocon 2022.
+\end{cvitems}
+\end{rSection}
+
+%--------------------------------------------------------------------------------
+%    PROJECTS
+%-----------------------------------------------------------------------------------------------
+% \begin{rSection}{Projects}
+
+
+%--D3book--
+% {\bf Comparison of different $3$D object detection CNN
+% architectures}\\
+% Explored and implemented various $3$D deep networks like PointNet and Dynamic Graph CNN (DGCNN) on Toyota HSR robot, fine-tuned models on synthetic and real world data; executed simple pick and place tasks.
+
+
+% {\bf Sampling-based motion planning for manipulators}\\
+% Implemented PRM and RRT algorithms in \textbf{MATLAB} for robotic manipulator in the generated configuration space, computing and smoothing the shortest collision-free path from start to goal by removing intermediate nodes.
+
+
+%--copy and paste this region  if you need more--
+% \end{rSection}
+
+%--------------------------------------------------------------------------------
+%    Achievements and Awards
+%-----------------------------------------------------------------------------------------------
+\begin{rSection}{Achievements and Awards} 
+
+{2023\hspace{1em}}{\bf Team (India) received SMC Coporation Award}{, }{\href{https://www.abu.org.my/2023/08/28/toyohashi-university-of-technology-of-japan-wins-abu-robocon-2023/}{ABU Robocon 2023}} \hfill Phnom Penh, KH \vspace{-0.5em}
+
+{2023\hspace{1em}}{\bf Team secured 1st place (National Champions)}{, }{\href{https://roboticsindia.live/dd-robocon-2023-match-live-score/}{DD Robocon 2023}} \hfill Delhi, IN \vspace{-0.5em}
+
+{2022\hspace{1em}}{\bf Team received Visvesvaraya best design award \& \texteuro 1000 prize}{, }{\href{https://roboticsindia.live/dd-robocon-2022-result/}{DD Robocon 2022}} \hfill Delhi, IN \vspace{-0.5em}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+% \begin{rSection}{Service}
+% %--copy and paste this region  if you need more--
+% {\textbf {Manuscript Reviewer}, International Communication Association} \hfill {2019} 
+% % {\hspace{10em} Divisions: Communication \& Technology, Information Systems}
+% \end{rSection}
+%----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+% \begin{rSection}{Skills}
+% \resumeHeadingListStart{}
+
+% {\bf Programming Languages} \hfill C++, Python, MATLAB, JavaScript, Bash\\[0.35em]
+% {\bf Software/Tools} \hfill ROS 2, Linux, CMake, Docker, MoveIt!, Git, Gazebo, Nvidia Isaac Sim, \LaTeX \\[0.35em]
+% {\bf Libraries } \hfill PCL, OpenCV, PyTorch, TensorFlow, NumPy, Matplotlib, scikit-learn,  OpenAI Gym, JAX, Eigen, \newline \null \hfill Open3D, OctoMap, SciPy, Drake, CasADi, CVXPY, Numba \\[0.35em]
+% {\bf Platforms } \hfill Clearpath, Universal Robots, Franka Emika, Unitree, Human Support Robot, Xarm, Kinnova,\newline \null \hfill TurtleBot, Nvidia Jetson, Raspberry Pi, Arduino, STM32 \\[0.35em]
+% {\bf Interests } \hfill Aerospace and Aviation simulation, Piano, Guitar, Books
+% \resumeHeadingListEnd{}
+% \end{rSection}
+\begin{rSection}{Skills}
+\resumeHeadingListStart{}
+% \vspace{-1em}
+\resumeSectionType{Programming Languages}{:}{C++, Python, Bash}
+\resumeSectionType{Software/Tools}{:}{ROS 2, Linux, CMake, Git, Gazebo, MuJoCo, Nvidia Isaac Lab, Qt}
+\resumeSectionType{Libraries}{:}{PyTorch, TensorFlow, NumPy, Matplotlib, scikit-learn, Eigen, CVXPY, Pinocchio, YOLOv5, OpenCV}
+\resumeSectionType{Platforms}{:}{Nvidia Jetson, Raspberry Pi, Arduino, STM32}
+\resumeHeadingListEnd{}
+\end{rSection}
+
+% \newpage
+
+
+% \end{rSection}
+
+
+
+\newpage
+\thispagestyle{reference}
+
+
+\end{document}----------------------------
