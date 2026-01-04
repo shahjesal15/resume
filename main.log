@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.4)  4 JAN 2026 16:50
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.4)  4 JAN 2026 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,31 +593,15 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 87--87
 [1
 
 ]
-Overfull \hbox (2.54822pt too wide) in paragraph at lines 157--158
-[]\TU/SourceSansPro-Regular.otf(0)/m/n/10.95 Implemented low-level control usin
-g coordinate transforms and inverse kinematics, converting task-space
- []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 228.
+(Font)              <10.95> on input line 229.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 228.
+(Font)              <8> on input line 229.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 228.
-
-Overfull \hbox (236.14323pt too wide) in alignment at lines 228--228
-[][][] 
- []
-
+(Font)              <6> on input line 229.
 
 Overfull \hbox (236.14323pt too wide) in alignment at lines 229--229
 [][][] 
- []
-
-
-Underfull \hbox (badness 1584) in paragraph at lines 230--230
-[]|\TU/SourceSansPro-Regular.otf(0)/m/n/10.95 PyTorch, TensorFlow, NumPy, Matpl
-otlib, scikit-learn, Eigen, CVXPY,
  []
 
 
@@ -626,7 +610,18 @@ Overfull \hbox (236.14323pt too wide) in alignment at lines 230--230
  []
 
 
+Underfull \hbox (badness 1584) in paragraph at lines 231--231
+[]|\TU/SourceSansPro-Regular.otf(0)/m/n/10.95 PyTorch, TensorFlow, NumPy, Matpl
+otlib, scikit-learn, Eigen, CVXPY,
+ []
+
+
 Overfull \hbox (236.14323pt too wide) in alignment at lines 231--231
+[][][] 
+ []
+
+
+Overfull \hbox (236.14323pt too wide) in alignment at lines 232--232
 [][][] 
  []
 
@@ -637,10 +632,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  17139 strings out of 476191
  340442 string characters out of 5812073
- 715170 words of memory out of 5000000
+ 716169 words of memory out of 5000000
  37665 multiletter control sequences out of 15000+600000
  472550 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,11n,91p,644b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,11n,91p,644b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (2 pages, 58160 bytes).
+Output written on main.xdv (2 pages, 57596 bytes).
