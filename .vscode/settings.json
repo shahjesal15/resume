@@ -10,7 +10,8 @@
         "*.synctex.gz",
         "*.toc",
         "*.bbl",
-        "*.blg"
+        "*.blg",
+        "*.xdv"
     ],
 
     "latex-workshop.latex.tools": [

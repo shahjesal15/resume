@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-PROJECT_DIR="${1:-$PWD}"
+PROJECT_DIR="${1:-../$PWD}"
 SUDO=""
 [ "$(id -u)" -ne 0 ] && command -v sudo >/dev/null 2>&1 && SUDO="sudo"
 
@@ -64,7 +64,8 @@ else
         "*.synctex.gz",
         "*.toc",
         "*.bbl",
-        "*.blg"
+        "*.blg",
+        "*.xdv",
     ],
     "latex-workshop.latex.tools": [
         {
