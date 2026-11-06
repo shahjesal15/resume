@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# setup-latex.sh: install everything needed to build the resume with XeLaTeX in VS Code.
+#
+# Usage:
+#   chmod +x setup-latex.sh
+#   ./setup-latex.sh [project_dir]     # project_dir defaults to the current directory
+#
+# Supports: Debian/Ubuntu (apt), Fedora (dnf), Arch (pacman), macOS (Homebrew).
+
+set -euo pipefail
+
+PROJECT_DIR="${1:-$PWD}"
+SUDO=""
+[ "$(id -u)" -ne 0 ] && command -v sudo >/dev/null 2>&1 && SUDO="sudo"
+
+echo "==> Installing TeX packages"
+if command -v apt-get >/dev/null 2>&1; then
+    $SUDO apt-get update
+    $SUDO apt-get install -y \
+        texlive-xetex texlive-latex-extra texlive-fonts-extra \
+        texlive-fonts-recommended texlive-science latexmk
+elif command -v dnf >/dev/null 2>&1; then
+    $SUDO dnf install -y \
+        texlive-xetex texlive-collection-latexextra texlive-collection-fontsextra \
+        texlive-fontawesome texlive-fontawesome5 texlive-academicons latexmk
+elif command -v pacman >/dev/null 2>&1; then
+    $SUDO pacman -Sy --needed --noconfirm \
+        texlive-xetex texlive-latexextra texlive-fontsextra texlive-binextra
+elif command -v brew >/dev/null 2>&1; then
+    brew install --cask mactex-no-gui
+    eval "$(/usr/libexec/path_helper)"
+else
+    echo "Unsupported package manager. Install TeX Live with XeTeX and fonts-extra manually." >&2
+    exit 1
+fi
+
+echo "==> Refreshing TeX file database"
+$SUDO mktexlsr || true
+
+echo "==> Installing VS Code extension (LaTeX Workshop)"
+if command -v code >/dev/null 2>&1; then
+    code --install-extension James-Yu.latex-workshop --force
+else
+    echo "    'code' CLI not found. In VS Code run: Ctrl+Shift+P -> 'Shell Command: Install code command in PATH'," >&2
+    echo "    or install the 'LaTeX Workshop' extension from the Extensions panel." >&2
+fi
+
+echo "==> Writing workspace settings to $PROJECT_DIR/.vscode/settings.json"
+mkdir -p "$PROJECT_DIR/.vscode"
+SETTINGS="$PROJECT_DIR/.vscode/settings.json"
+if [ -f "$SETTINGS" ]; then
+    echo "    $SETTINGS already exists, leaving it alone."
+    echo "    Merge the recipe from setup-latex.sh manually if needed."
+else
+    cat > "$SETTINGS" <<'EOF'
+{
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.out",
+        "*.synctex.gz",
+        "*.toc",
+        "*.bbl",
+        "*.blg"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-xelatex",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (xelatex)",
+            "tools": ["latexmk-xelatex"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "first"
+}
+EOF
+fi
+
+echo "==> Verifying"
+for bin in xelatex latexmk; do
+    if command -v "$bin" >/dev/null 2>&1; then
+        echo "    OK: $bin -> $(command -v "$bin")"
+    else
+        echo "    MISSING: $bin (open a new terminal and re-check)" >&2
+    fi
+done
+
+echo
+echo "Done. Reload VS Code (Ctrl+Shift+P -> 'Developer: Reload Window'), open main.tex, and press Ctrl+Alt+B."
