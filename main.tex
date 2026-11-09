@@ -96,21 +96,12 @@
 \begin{rSection}{Education}
 %--copy and paste this region  if you need more--
 {\textbf {M.Sc. in Engineering Cybernetics}} \\
-{\href{https://www.uni-stuttgart.de/studium/master/engineering-cybernetics-m.sc./}{Universität Stuttgart}} \hfill {Sep 2026 -- Present} 
-% \begin{itemize}
-%     % Thesis
-%   \item[] \vspace{-0.5em} \hspace{-1.0em} Thesis: \emph{Impedance-based trajectory tracking for quadrupedal locomotion}
-%   % Focus
-%   \item[] \vspace{-0.5em} \hspace{-1.0em} Focus: \emph{Robot Dynamics}, \smallspace \emph{Legged Locomotion}, \smallspace \emph{Computed Torque Control}, \smallspace and \smallspace \emph{Robotics Software}.
-% \end{itemize}
-
-{\textbf {B.E. in Electronics and Communication}} \hfill {CGPA: 7.63/10.0} \\
+{\href{https://www.uni-stuttgart.de/studium/master/engineering-cybernetics-m.sc./}{Universität Stuttgart}} \hfill {Sep 2026 -- Present} \\
+{\textbf {B.E. in Electronics and Communication}} \hfill {CGPA: 2.1/5.0} \\
 {\href{https://www.gtu.ac.in/}{Gujarat Technological University}} \hfill {Jun 2024} 
 \begin{itemize}
     % Thesis
-  \item[] \vspace{-0.5em} \hspace{-1.0em} Thesis: \emph{Impedance-based trajectory tracking for quadrupedal locomotion}
-  % Focus
-  \item[] \vspace{-0.5em} \hspace{-1.0em} Focus: \emph{Robot Dynamics}, \smallspace \emph{Legged Locomotion}, \smallspace \emph{Computed Torque Control}, \smallspace and \smallspace \emph{Robotics Software}.
+  \item[] \vspace{-0.5em} \hspace{-1.0em} Thesis: \emph{Computed torque control based trajectory tracking for legged locomotion} 
 \end{itemize}
 \end{rSection}
 %----------------------------------------------------------------------------------------
@@ -121,28 +112,19 @@
 {\bf Associate Robotics Engineer} \hfill {\ Sept 2024 -- April 2026 }\\ 
 {\href{https://www.strider-robotics.in/}{Strider Robotics}} \hfill {\ {Bengaluru, IN}}
 \begin{cvitems}
-  \item Migrated the quadrupedal robot's legacy ROS1 state estimator to ROS2, reimplementing the Kalman Filter fusing IMU, leg kinematics, and contact data; validated against motion-capture ground truth for accurate, robust estimation.
-  % \item Maintained and extended the robot software stack and developed an internal ROS2 SDK, enabling faster experimentation and scalable development for control and navigation workflows.
-  % \item Performed system identification and developed actuator models using machine and reinforcement learning, enhancing sim-to-real transfer of reinforcement learning policies for quadrupedal hardware.  
-  % \item Designed and implemented push- and fall-recovery behaviors for a quadrupedal robot to recover from slips, external pushes, and full fall scenarios.
-  % \item Improved Model Predictive Control (MPC) and implemented a foothold optimization framework, achieving more stable locomotion for a quadrupedal robot on uneven terrain.
-  % \item Designed and implemented a Kalman Filter–based state estimator fusing IMU, leg kinematics, and contact data; validated against motion-capture ground truth, resulting in highly accurate and robust state estimation for a quadrupedal robot.
+  \item \textbf{Migrated} a quadruped's legacy ROS1 state estimator to ROS2 to support the robot's updated software stack, \textbf{validating} the Kalman Filter's output against motion-capture ground truth to confirm estimation accuracy.  
+  \item \textbf{Developed} an internal ROS2 SDK and \textbf{standardized} robot software configurations, \textbf{eliminating} manual setup steps and significantly reducing bring-up time for control and navigation experiments.
+  \item \textbf{Designed} and \textbf{implemented} push- and fall-recovery behaviors for a quadrupedal robot, \textbf{enabling} it to withstand slips and external pushes and to self-right from a fully inverted (upside-down) position.
+  \item \textbf{Estimated} motor and gearbox parameters using CMA-ES and \textbf{updated} Isaac Lab's actuator model to match the real quadruped, narrowing the sim-to-real gap for RL policy training.
+  \item \textbf{Trained} an actuator-net on real hardware data to model motor torque nonlinearities; together with the calibrated simulation, \textbf{reduced} thermal load by 25\% and \textbf{eliminated} overheating-related hardware failures during slope walking.
 \end{cvitems}
 %--Strider Robotics Intern--
 {\bf  Robotics Intern} \hfill {\ Jan 2024 -- Aug 2024 }\\ 
 {\href{https://www.strider-robotics.in/}{Strider Robotics}} \hfill {\ {Bengaluru, IN}}
 \begin{cvitems}
-  \item Developed an impedance-based trajectory tracker for quadrupedal legs within the MPC framework using computed torque control algorithm, enabling force-compliant behavior in leg motion.
-  \item Benchmarked multiple actuator designs, including quasi-direct drive and harmonic drives, evaluating speed, torque, and efficiency, and provided quantitative data for optimal actuator selection.
-  \item Integrated the Unitree SDK for hardware testing, enabling seamless deployment and evaluation of control algorithms on the GO1 robot.
-\end{cvitems}
-%--Blog writer--
-{\bf  Technical Content Writer} \hfill {\ Jan 2023 -- Present }\\ 
-{\href{https://www.circuitbread.com/tutorials/series/communication-protocols}{CircuitBread}} \hfill {\ ({Remote}) Boise, US}
-\begin{cvitems}
-    \item Published in-depth articles on communication protocols for embedded systems, contributing to an online learning platform used by students and early-career engineers
-    \item Collaborate with the CircuitBread team on ongoing educational content, contributing to documentation and future technical tutorials.
-\end{cvitems}
+  \item \textbf{Integrated} the Unitree SDK for the GO1 quadruped, \textbf{enabling} rapid hardware deployment and testing.
+  \item \textbf{Developed} an impedance-based leg trajectory tracker using computed torque control within the MPC framework, \textbf{enabling} force-compliant locomotion.
+  \item \textbf{Developed} actuator-specific ros2\_control hardware interfaces and controllers to test multiple QDD actuators on a common setup, \textbf{benchmarking} speed, torque, and efficiency to inform actuator selection.\end{cvitems}
 \end{rSection}
 
 %--------------------------------------------------------------------------------
@@ -153,98 +135,31 @@
 {\bf Software Lead}  \hfill {\ Aug 2022 -- Nov 2023}\\
 {\href{https://www.gturoboticsclub.com/acheivements}{GTU Robotics Club (GRC 2023)}} \hfill {\ {Ahmedabad, IN}}
 \begin{cvitems}
-  \item Mentored and coordinated a multi-member software team, steering a strategic transition from ad-hoc hardware integration to a modular robotics software stack, which directly enabled a \textbf{national championship win} at DD Robocon 2023 (1st of 63 teams) and representing \textbf{India} at ABU Robocon 2023 (6th of 13 countries).
-  \item Implemented inverse kinematics and motion planning for a 3WD omnidirectional mobile base, enabling repeatable point-to-point navigation.
-  \item Developed a state estimation framework for a wheeled robot by fusing wheel encoder and IMU data via dead-reckoning, achieving centimeter-level localization accuracy.
+  \item \textbf{Led} a software team to build a modular stack with omnidirectional navigation and dead-reckoning localization, \textbf{winning} DD Robocon 2023 (1st of 63) and \textbf{representing} India at ABU Robocon 2023 (6th of 13).
+  % \item Mentored and coordinated a multi-member software team, steering a strategic transition from ad-hoc hardware integration to a modular robotics software stack, which directly enabled a \textbf{national championship win} at DD Robocon 2023 (1st of 63 teams) and representing \textbf{India} at ABU Robocon 2023 (6th of 13 countries).
+  % \item Implemented inverse kinematics and motion planning for a 3WD omnidirectional mobile base, enabling repeatable point-to-point navigation.
+  % \item Developed a state estimation framework for a wheeled robot by fusing wheel encoder and IMU data via dead-reckoning, achieving centimeter-level localization accuracy.
 \end{cvitems}
-%-- Eyantra 2023 --
-{\bf Software Member}  \hfill {\ Aug 2022 -- Apr 2023}\\
-{\href{https://www.gturoboticsclub.com/acheivements}{Team GRC}}{, }{\href{https://www.youtube.com/watch?v=EAOabSZD77o}{e-Yantra 2023}} \hfill {\ {Ahmedabad, IN}}
-\begin{cvitems}
-  \item Developed a 3WD holonomic mobile base simulation in ROS and Gazebo, enabling the testing of motion-planning algorithms via high level commands before hardware deployment.
-  \item Implemented a low-level control framework using the theory of coordinate transforms and inverse kinematics, converting task-space velocity commands into wheel velocities for hardware deployment.
-  \item Built a vision-based pose estimation pipeline with OpenCV and ArUco markers using a ceiling-mounted camera, enabling localization for the robot hardware.
-  \item Integrated perception, localization, and control into a wheeled robot that autonomously drew digital images on a real-world canvas during the final stage of e-Yantra 2023 (HOLA Bot theme).
-\end{cvitems}
-%-- Software Member --
-{\bf Software Member}  \hfill {\ Oct 2021 -- Jul 2022}\\
-{\href{https://www.gturoboticsclub.com/acheivements}{GTU Robotics Club (GRC 2022)}} \hfill {\ {Ahmedabad, IN}}
-\begin{cvitems}
-  \item Developed software for a semi-autonomous wheeled robot by fusing data from multiple onboard sensors, enabling robust and low-latency teleoperation during competition runs.
-  \item Implemented a real-time perception pipeline using YOLOv5 for object detection and tracking, providing reliable visual feedback of the object's position to the shooting mechanism.
-  \item Designed and deployed semi-autonomous control logic for the pick-and-place mechanism, reducing operator workload and contributing to a \textbf{top-10 national finish} (10th out of 43 teams) at DD Robocon 2022.
-\end{cvitems}
-\end{rSection}
-
-%--------------------------------------------------------------------------------
-%    PROJECTS
-%-----------------------------------------------------------------------------------------------
-% \begin{rSection}{Projects}
-
-
-%--D3book--
-% {\bf Comparison of different $3$D object detection CNN
-% architectures}\\
-% Explored and implemented various $3$D deep networks like PointNet and Dynamic Graph CNN (DGCNN) on Toyota HSR robot, fine-tuned models on synthetic and real world data; executed simple pick and place tasks.
-
-
-% {\bf Sampling-based motion planning for manipulators}\\
-% Implemented PRM and RRT algorithms in \textbf{MATLAB} for robotic manipulator in the generated configuration space, computing and smoothing the shortest collision-free path from start to goal by removing intermediate nodes.
-
-
-%--copy and paste this region  if you need more--
-% \end{rSection}
-
-%--------------------------------------------------------------------------------
-%    Achievements and Awards
-%-----------------------------------------------------------------------------------------------
-\begin{rSection}{Achievements and Awards} 
-
-{2023\hspace{1em}}{\bf Team (India) received SMC Corporation Award}{, }{\href{https://www.abu.org.my/2023/08/28/toyohashi-university-of-technology-of-japan-wins-abu-robocon-2023/}{ABU Robocon 2023}} \hfill Phnom Penh, KH \vspace{-0.5em}
-
-{2023\hspace{1em}}{\bf Team (GRC 2023) secured 1st place (National Champions)}{, }{\href{https://roboticsindia.live/dd-robocon-2023-match-live-score/}{DD Robocon 2023}} \hfill Delhi, IN \vspace{-0.5em}
-
-{2022\hspace{1em}}{\bf Team (GRC 2022) received Visvesvaraya Best Design Award and a cash prize} \\
-{\bf\hphantom{2022}\hspace{1em}of \texteuro 1000}{, }{\href{https://roboticsindia.live/dd-robocon-2022-result/}{DD Robocon 2022}} \hfill Delhi, IN
-
 \end{rSection}
 
 %--------------------------------------------------------------------------------
 %    Open source contributions
 %-----------------------------------------------------------------------------------------------
 \begin{rSection}{Open Source Contributions}
-    {\href{https://github.com/shahjesal15/dynamic_reconfigure}{\bf RViz Dynamic Reconfigure}} \hfill {Maintainer} \\ [0.4em]
-    Created a \textbf{RViz2} plugin for GUI-based dynamic parameter reconfiguration, allowing real-time inspection, modification, and logging of \textbf{ROS2 node} parameters, enhancing development productivity.
+    {\href{https://github.com/shahjesal15/dynamic_reconfigure}{\bf RViz Dynamic Reconfigure}} \hfill {Maintainer}
+    \item \textbf{Developed} an \textbf{RViz2} plugin for live GUI-based reconfiguration and logging of \textbf{ROS2 node} parameters, \textbf{streamlining} tuning and debugging.
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS SECTION
 %----------------------------------------------------------------------------------------
 
-% \begin{rSection}{Service}
-% %--copy and paste this region  if you need more--
-% {\textbf {Manuscript Reviewer}, International Communication Association} \hfill {2019} 
-% % {\hspace{10em} Divisions: Communication \& Technology, Information Systems}
-% \end{rSection}
-%----------------------------------------------------------------------------------------
-%	SKILLS SECTION
-%----------------------------------------------------------------------------------------
-% \begin{rSection}{Skills}
-% \resumeHeadingListStart{}
 
-% {\bf Programming Languages} \hfill C++, Python, MATLAB, JavaScript, Bash\\[0.35em]
-% {\bf Software/Tools} \hfill ROS 2, Linux, CMake, Docker, MoveIt!, Git, Gazebo, Nvidia Isaac Sim, \LaTeX \\[0.35em]
-% {\bf Libraries } \hfill PCL, OpenCV, PyTorch, TensorFlow, NumPy, Matplotlib, scikit-learn,  OpenAI Gym, JAX, Eigen, \newline \null \hfill Open3D, OctoMap, SciPy, Drake, CasADi, CVXPY, Numba \\[0.35em]
-% {\bf Platforms } \hfill Clearpath, Universal Robots, Franka Emika, Unitree, Human Support Robot, Xarm, Kinnova,\newline \null \hfill TurtleBot, Nvidia Jetson, Raspberry Pi, Arduino, STM32 \\[0.35em]
-% {\bf Interests } \hfill Aerospace and Aviation simulation, Piano, Guitar, Books
-% \resumeHeadingListEnd{}
-% \end{rSection}
 \begin{rSection}{Skills}
 \resumeHeadingListStart{}
 % \vspace{-1em}
 \resumeSectionType{Programming Languages}{:}{C++, Python, Bash}
-\resumeSectionType{Software/Tools}{:}{ROS 2, Linux, CMake, Git, Gazebo, MuJoCo, Nvidia Isaac Lab, Qt, LaTeX}
-\resumeSectionType{Libraries}{:}{PyTorch, TensorFlow, NumPy, Matplotlib, scikit-learn, Eigen, CVXPY, Pinocchio, YOLOv5, OpenCV}
+\resumeSectionType{Software/Tools}{:}{ROS, ROS 2, Linux, CMake, Git, Gazebo, MuJoCo, Nvidia Isaac Lab, Qt, LaTeX}
 \resumeSectionType{Platforms}{:}{Nvidia Jetson, Raspberry Pi, Arduino, STM32}
 \resumeHeadingListEnd{}
 \end{rSection}

@@ -1,17 +1,29 @@
 #!/usr/bin/env bash
 # setup-latex.sh: install everything needed to build the resume with XeLaTeX in VS Code.
 #
-# Usage:
-#   chmod +x setup-latex.sh
-#   ./setup-latex.sh [project_dir]     # project_dir defaults to the current directory
+# Expected layout:
+#   resume/                 <- project root (contains main.tex and .vscode/)
+#   ├── .vscode/
+#   ├── main.tex
+#   └── setup/
+#       └── setup-latex.sh  <- this script
+#
+# Usage (from anywhere):
+#   chmod +x setup/setup-latex.sh
+#   ./setup/setup-latex.sh [project_dir]
+#
+# project_dir defaults to the parent of the folder this script lives in.
 #
 # Supports: Debian/Ubuntu (apt), Fedora (dnf), Arch (pacman), macOS (Homebrew).
 
 set -euo pipefail
 
-PROJECT_DIR="${1:-../$PWD}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="${1:-$(dirname "$SCRIPT_DIR")}"
 SUDO=""
 [ "$(id -u)" -ne 0 ] && command -v sudo >/dev/null 2>&1 && SUDO="sudo"
+
+echo "==> Project directory: $PROJECT_DIR"
 
 echo "==> Installing TeX packages"
 if command -v apt-get >/dev/null 2>&1; then
@@ -45,12 +57,12 @@ else
     echo "    or install the 'LaTeX Workshop' extension from the Extensions panel." >&2
 fi
 
-echo "==> Writing workspace settings to $PROJECT_DIR/.vscode/settings.json"
-mkdir -p "$PROJECT_DIR/.vscode"
 SETTINGS="$PROJECT_DIR/.vscode/settings.json"
+echo "==> Writing workspace settings to $SETTINGS"
+mkdir -p "$PROJECT_DIR/.vscode"
 if [ -f "$SETTINGS" ]; then
     echo "    $SETTINGS already exists, leaving it alone."
-    echo "    Merge the recipe from setup-latex.sh manually if needed."
+    echo "    Merge the XeLaTeX recipe into it manually if needed."
 else
     cat > "$SETTINGS" <<'EOF'
 {
@@ -66,6 +78,7 @@ else
         "*.bbl",
         "*.blg",
         "*.xdv",
+        "*.log"
     ],
     "latex-workshop.latex.tools": [
         {
