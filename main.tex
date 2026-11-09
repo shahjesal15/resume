@@ -117,14 +117,15 @@
   \item \textbf{Designed} and \textbf{implemented} push- and fall-recovery behaviors for a quadrupedal robot, \textbf{enabling} it to withstand slips and external pushes and to self-right from a fully inverted (upside-down) position.
   \item \textbf{Estimated} motor and gearbox parameters using CMA-ES and \textbf{updated} Isaac Lab's actuator model to match the real quadruped, narrowing the sim-to-real gap for RL policy training.
   \item \textbf{Trained} an actuator-net on real hardware data to model motor torque nonlinearities; together with the calibrated simulation, \textbf{reduced} thermal load by 25\% and \textbf{eliminated} overheating-related hardware failures during slope walking.
+  \item \textbf{Migrated} the quadruped simulation from the end-of-life Gazebo Classic to Gazebo Harmonic and \textbf{ported} internal custom plugins to the gz-sim framework, \textbf{restoring} full simulation support.
 \end{cvitems}
-%--Strider Robotics Intern--
+  %--Strider Robotics Intern--
 {\bf  Robotics Intern} \hfill {\ Jan 2024 -- Aug 2024 }\\ 
 {\href{https://www.strider-robotics.in/}{Strider Robotics}} \hfill {\ {Bengaluru, IN}}
 \begin{cvitems}
   \item \textbf{Integrated} the Unitree SDK for the GO1 quadruped, \textbf{enabling} rapid hardware deployment and testing.
-  \item \textbf{Developed} an impedance-based leg trajectory tracker using computed torque control within the MPC framework, \textbf{enabling} force-compliant locomotion.
-  \item \textbf{Developed} actuator-specific ros2\_control hardware interfaces and controllers to test multiple QDD actuators on a common setup, \textbf{benchmarking} speed, torque, and efficiency to inform actuator selection.\end{cvitems}
+  \item To achieve compliant locomotion, \textbf{developed} a computed torque controller for quadruped leg trajectory tracking, \textbf{reducing} tracking error by [X]\% and \textbf{enabling} stable touchdown on [hardware/simulation].  \item \textbf{Developed} actuator-specific ros2\_control hardware interfaces and controllers to test multiple QDD actuators on a common setup, \textbf{benchmarking} speed, torque, and efficiency to inform actuator selection.
+\end{cvitems}
 \end{rSection}
 
 %--------------------------------------------------------------------------------
@@ -147,7 +148,9 @@
 %-----------------------------------------------------------------------------------------------
 \begin{rSection}{Open Source Contributions}
     {\href{https://github.com/shahjesal15/dynamic_reconfigure}{\bf RViz Dynamic Reconfigure}} \hfill {Maintainer}
+\begin{cvitems}
     \item \textbf{Developed} an \textbf{RViz2} plugin for live GUI-based reconfiguration and logging of \textbf{ROS2 node} parameters, \textbf{streamlining} tuning and debugging.
+\end{cvitems}
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
@@ -159,8 +162,7 @@
 \resumeHeadingListStart{}
 % \vspace{-1em}
 \resumeSectionType{Programming Languages}{:}{C++, Python, Bash}
-\resumeSectionType{Software/Tools}{:}{ROS, ROS 2, Linux, CMake, Git, Gazebo, MuJoCo, Nvidia Isaac Lab, Qt, LaTeX}
-\resumeSectionType{Platforms}{:}{Nvidia Jetson, Raspberry Pi, Arduino, STM32}
+\resumeSectionType{Software/Tools}{:}{ROS, ROS 2, CMake, Git, Gazebo, MuJoCo, Nvidia Isaac Lab, Moveit2, RViz2, Nav2}
 \resumeHeadingListEnd{}
 \end{rSection}
 
