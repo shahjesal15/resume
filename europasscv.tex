@@ -41,23 +41,23 @@
 
 % ------------------------------------------------------------------
 \ecvsection[4pt]{Work experience}
-\ecvitem[2pt]{Sept 2024 -- April 2026}{\textbf{Associate Robotics Engineer}\\&
+\ecvitem[2pt]{Sep 2024 -- Apr 2026}{\textbf{Associate Robotics Engineer}\\&
   \href{https://www.strider-robotics.in/}{Strider Robotics}, Bengaluru, India}
 \ecvb{Migrated a quadruped's legacy ROS1 state estimator to ROS2 to support the robot's updated software stack, validating the Kalman Filter's output against motion-capture ground truth to confirm estimation accuracy.}
+\ecvb{Ported the robot's simulation from the end-of-life Gazebo Classic to Gazebo Harmonic and migrated internal custom plugins from gz-classic to the gz-sim framework, extending full simulation support.}
 \ecvb{Developed an internal ROS2 SDK and standardized robot software configurations, eliminating manual setup steps and significantly reducing bring-up time for control and navigation experiments.}
-\ecvb{Designed and implemented push- and fall-recovery behaviors for a quadrupedal robot, enabling it to withstand slips and external pushes and to self-right from a fully inverted (upside-down) position.}
 \ecvb{Estimated motor and gearbox parameters using CMA-ES and updated Isaac Lab's actuator model to match the real quadruped, narrowing the sim-to-real gap for RL policy training.}
 \ecvb{Trained an actuator-net on real hardware data to model motor torque nonlinearities; together with the calibrated simulation, reduced thermal load by 25\% and eliminated overheating-related hardware failures during slope walking.}
-\ecvb{Migrated the quadruped simulation from the end-of-life Gazebo Classic to Gazebo Harmonic and ported internal custom plugins to the gz-sim framework, restoring full simulation support.}
+\ecvb{Designed and implemented push- and fall-recovery behaviors for a quadrupedal robot, enabling it to withstand slips and external pushes and to self-right from a fully inverted (upside-down) position.}
 \ecvitem[4pt]{}{}
 \ecvitem[2pt]{Jan 2024 -- Aug 2024}{\textbf{Robotics Intern}\\&
   \href{https://www.strider-robotics.in/}{Strider Robotics}, Bengaluru, India}
-\ecvb{Integrated the Unitree SDK for the GO1 quadruped, enabling rapid hardware deployment and testing.}
+\ecvb{Integrated the Unitree SDK for the GO1 and GO2 quadruped with robot agnostic ROS2 stack, enabling rapid hardware deployment and testing.}
+\ecvb{Developed actuator-specific ros2\_control hardware interfaces and agnostic controllers to test multiple QDD actuators on a common setup, benchmarking speed, torque, and efficiency to inform actuator selection.}
 \ecvb{Implemented a model-based computed torque controller for quadruped leg trajectory tracking, reducing mean tracking error by 10\% relative to a PD controller tracking baseline.}
-\ecvb{Developed actuator-specific ros2\_control hardware interfaces and controllers to test multiple QDD actuators on a common setup, benchmarking speed, torque, and efficiency to inform actuator selection.}
 
-% ------------------------------------------------------------------
-\pagebreak
+% % ------------------------------------------------------------------
+% \pagebreak
 \ecvsection[4pt]{Education and training}
 \ecvitem[4pt]{Sep 2026 -- Present}{\textbf{M.Sc. in Engineering Cybernetics}\\&
   \href{https://www.uni-stuttgart.de/studium/master/engineering-cybernetics-m.sc./}{Universität Stuttgart}, Stuttgart, Germany}
