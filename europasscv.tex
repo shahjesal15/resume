@@ -1,0 +1,87 @@
+\documentclass[a4paper,11pt,booktabs]{europecv}
+\usepackage{graphicx}
+\usepackage{fontspec}
+% Same font setup as your main.tex (needs the fonts/ folder next to this file)
+\setmainfont{SourceSansPro-Regular.otf}[
+  Path = fonts/,
+  BoldFont = SourceSansPro-SemiBold.otf,
+  ItalicFont = SourceSansPro-It.otf,
+  BoldItalicFont = SourceSansPro-BoldIt.otf
+]
+\usepackage[left=0.6in,top=0.6in,right=0.8in,bottom=0.6in]{geometry} % margins taken from resume.tex
+\usepackage{hyperref}
+\usepackage{enumitem}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black}
+
+% One bullet = one table row (rows cannot be split across pages in europecv)
+\newcommand{\ecvb}[1]{\ecvitem[1pt]{}{\begin{itemize}[leftmargin=1.1em,topsep=0pt,parsep=0pt,partopsep=0pt,itemsep=1pt,label=\textbullet]\item #1\end{itemize}\vspace{-0.9\baselineskip}}}
+
+% Language table: relabel "Self-assessment" because the level comes from an IELTS result
+\makeatletter
+\AtBeginDocument{%
+  \def\ecv@assesskey{Certified (IELTS)}%
+  \def\ecv@langfooterkey{Common European Framework of Reference (CEF) level, as equivalent to IELTS result}%
+}
+\makeatother
+
+% Personal information
+\ecvlastname{Shah}
+\ecvfirstname{Jesal Deepakbhai}
+\ecvemail{\href{mailto:jesalshah1510@gmail.com}{jesalshah1510@gmail.com}}
+
+\ecvbeforepicture{\raggedleft}
+\ecvpicture[height=3cm]{assets/german-passport-photo.jpeg}
+\ecvafterpicture{\ecvspace{-3.5cm}}
+
+\begin{document}
+\begin{europecv}
+\ecvpersonalinfo[6pt]
+\ecvitem{GitHub}{\href{https://github.com/shahjesal15}{github.com/shahjesal15}}
+\ecvitem[10pt]{LinkedIn}{\href{https://linkedin.com/in/shahjesal15}{linkedin.com/in/shahjesal15}}
+
+% ------------------------------------------------------------------
+\ecvsection[4pt]{Work experience}
+\ecvitem[2pt]{Sept 2024 -- April 2026}{\textbf{Associate Robotics Engineer}\\&
+  \href{https://www.strider-robotics.in/}{Strider Robotics}, Bengaluru, India}
+\ecvb{Migrated a quadruped's legacy ROS1 state estimator to ROS2 to support the robot's updated software stack, validating the Kalman Filter's output against motion-capture ground truth to confirm estimation accuracy.}
+\ecvb{Developed an internal ROS2 SDK and standardized robot software configurations, eliminating manual setup steps and significantly reducing bring-up time for control and navigation experiments.}
+\ecvb{Designed and implemented push- and fall-recovery behaviors for a quadrupedal robot, enabling it to withstand slips and external pushes and to self-right from a fully inverted (upside-down) position.}
+\ecvb{Estimated motor and gearbox parameters using CMA-ES and updated Isaac Lab's actuator model to match the real quadruped, narrowing the sim-to-real gap for RL policy training.}
+\ecvb{Trained an actuator-net on real hardware data to model motor torque nonlinearities; together with the calibrated simulation, reduced thermal load by 25\% and eliminated overheating-related hardware failures during slope walking.}
+\ecvb{Migrated the quadruped simulation from the end-of-life Gazebo Classic to Gazebo Harmonic and ported internal custom plugins to the gz-sim framework, restoring full simulation support.}
+\ecvitem[4pt]{}{}
+\ecvitem[2pt]{Jan 2024 -- Aug 2024}{\textbf{Robotics Intern}\\&
+  \href{https://www.strider-robotics.in/}{Strider Robotics}, Bengaluru, India}
+\ecvb{Integrated the Unitree SDK for the GO1 quadruped, enabling rapid hardware deployment and testing.}
+\ecvb{Implemented a model-based computed torque controller for quadruped leg trajectory tracking, reducing mean tracking error by 10\% relative to a PD controller tracking baseline.}
+\ecvb{Developed actuator-specific ros2\_control hardware interfaces and controllers to test multiple QDD actuators on a common setup, benchmarking speed, torque, and efficiency to inform actuator selection.}
+
+% ------------------------------------------------------------------
+\pagebreak
+\ecvsection[4pt]{Education and training}
+\ecvitem[4pt]{Sep 2026 -- Present}{\textbf{M.Sc. in Engineering Cybernetics}\\&
+  \href{https://www.uni-stuttgart.de/studium/master/engineering-cybernetics-m.sc./}{Universität Stuttgart}, Stuttgart, Germany}
+\ecvitem{Jun 2024}{\textbf{B.E. in Electronics and Communication} (CGPA: 2.1/5.0)\\&
+  \href{https://www.gtu.ac.in/}{Gujarat Technological University}, India\\&
+  Thesis: \emph{Computed torque control based trajectory tracking for legged locomotion}}
+
+% ------------------------------------------------------------------
+\ecvsection[4pt]{Leadership and activities}
+\ecvitem[2pt]{Aug 2022 -- Nov 2023}{\textbf{Software Lead}\\&
+  \href{https://www.gturoboticsclub.com/acheivements}{GTU Robotics Club (GRC 2023)}, Ahmedabad, India}
+\ecvb{Led a software team to build a modular stack with omnidirectional navigation and dead-reckoning localization, winning DD Robocon 2023 (1st of 63) and representing India at ABU Robocon 2023 (6th of 13).}
+
+% ------------------------------------------------------------------
+\ecvsection[4pt]{Open source contributions}
+\ecvitem[2pt]{Maintainer}{\textbf{\href{https://github.com/shahjesal15/dynamic_reconfigure}{RViz Dynamic Reconfigure}}}
+\ecvb{Developed an RViz2 plugin for live GUI-based reconfiguration and logging of ROS2 node parameters, streamlining tuning and debugging.}
+
+% ------------------------------------------------------------------
+\ecvsection[4pt]{Personal skills}
+\ecvitem{Programming languages}{C++, Python, Bash}
+\ecvitem{Software / tools}{ROS, ROS 2, CMake, Git, Gazebo, MuJoCo, NVIDIA Isaac Lab, MoveIt2, RViz2, Nav2}
+\ecvlanguageheader{(*)}
+\ecvlastlanguage{English}{\ecvCTwo}{\ecvCTwo}{\ecvCTwo}{\ecvCTwo}{\ecvCTwo}
+\ecvlanguagefooter[6pt]{(*)}
+\end{europecv}
+\end{document}
